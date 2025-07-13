@@ -1,0 +1,6 @@
+# Ignore Python venv and config
+venv/
+.env
+__pycache__/
+*.pyc
+db.sqlite3

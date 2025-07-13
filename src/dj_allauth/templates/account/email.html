@@ -1,0 +1,12 @@
+<!-- templates/account/email.html -->
+<h2>Manage Email Addresses</h2>
+<form method="POST" action="{% url 'account_email' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update</button>
+</form>
+<ul>
+    {% for email in email_addresses %}
+        <li>{{ email.email }} {% if email.verified %}(Verified){% else %}(Unverified){% endif %}</li>
+    {% endfor %}
+</ul>
